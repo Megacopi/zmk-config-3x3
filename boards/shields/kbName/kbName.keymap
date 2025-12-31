@@ -9,7 +9,7 @@
         base_layer {
             display-name = "Base";
             bindings = < &kp K_CUT    &kp K_COPY    &kp K_PASTE    
-                         &kp K_UNDO    &kp UP    &kp K_REDO
+                         &kp PAGE_UP    &kp UP    &kp PAGE_DOWN
                          &kp LEFT    &kp DOWN    &kp RIGHT >;
         };
     };
