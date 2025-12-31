@@ -8,8 +8,8 @@
 
         base_layer {
             display-name = "Base";
-            bindings = < &kp K_CUT    &kp K_COPY    &kp K_PASTE    
-                         &kp PAGE_UP    &kp UP    &kp PAGE_DOWN
+            bindings = < &kp F1    &kp TAB    &kp T    
+                         &kp ESC    &kp UP    &kp E
                          &kp LEFT    &kp DOWN    &kp RIGHT >;
         };
     };
