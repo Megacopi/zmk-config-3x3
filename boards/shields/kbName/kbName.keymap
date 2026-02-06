@@ -8,10 +8,15 @@
 
         base_layer {
             display-name = "Base";
-            bindings = < &kp F1    &kp TAB    &kp T  
+            bindings = < &mo 1    &kp TAB    &kp T  
                          &kp ESC    &kp UP    &kp E
                          &kp LEFT    &kp DOWN    &kp RIGHT 
                         >;
         };
+        function_layer {
+            bindings = <
+                &bt BT_CLR   &sys_reset   &bootloader
+                &bt BT_SEL 0 &bt BT_SEL 1 &out OUT_TOG
+                &trans       &kp N0       &kp DOT
     };
  };
