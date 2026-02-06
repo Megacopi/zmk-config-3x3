@@ -9,8 +9,8 @@
         base_layer {
             display-name = "Base";
             bindings = < &kp F1    &kp TAB    &kp T  
-                         &kp LEFT    &kp DOWN    &kp RIGHT 
                          &kp ESC    &kp UP    &kp E
+                         &kp LEFT    &kp DOWN    &kp RIGHT 
                         >;
         };
     };
