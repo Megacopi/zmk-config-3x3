@@ -1,12 +1,13 @@
 # Copyright (c) 2024
 # SPDX-License-Identifier: MIT
 
-if kbName
+# HIER WAR DER TIPPFEHLER: "kbNanme" -> "SHIELD_KBNAME"
+# (ZMK macht aus dem Ordnernamen "kbName" automatisch "SHIELD_KBNAME")
+if SHIELD_KBNAME
 
 config ZMK_KEYBOARD_NAME
     default "Macropad 3x3"
 
-# Aktiviert das nice!view
 config ZMK_DISPLAY
     default y
 
