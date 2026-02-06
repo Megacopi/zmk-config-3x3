@@ -1,7 +1,7 @@
 # Copyright (c) 2024
 # SPDX-License-Identifier: MIT
 
-if kbNanme
+if kbName
 
 config ZMK_KEYBOARD_NAME
     default "Macropad 3x3"
