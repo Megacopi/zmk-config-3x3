@@ -4,14 +4,14 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
-        zephyr,display = &nice_view;
+        // WICHTIG: Die Zeile zephyr,display NICHT hier einfügen, 
+        // das macht das nice_view Shield schon für dich!
     };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <3>;
         rows = <3>;
-        // Mapping: Welcher Switch ist wo? (3x3 Matrix)
         map = <
             RC(0,0) RC(0,1) RC(0,2)
             RC(1,0) RC(1,1) RC(1,2)
@@ -24,15 +24,12 @@
         label = "KSCAN";
         diode-direction = "col2row"; 
 
-        // Deine Pins aus dem Bild:
-        // ROW0=P0.22, ROW1=P0.24, ROW2=P1.00
         row-gpios
             = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
 
-        // COL0=P0.11, COL1=P1.04, COL2=P1.06
         col-gpios
             = <&gpio0 11 GPIO_ACTIVE_HIGH>
             , <&gpio1 4  GPIO_ACTIVE_HIGH>
@@ -41,27 +38,6 @@
     };
 };
 
-// Das Display Setup (nice!view)
-&pro_micro_i2c {
-    status = "disabled"; // Wir brauchen I2C nicht, wir nehmen SPI
-};
-
-&nice_view_spi {
-    // Dein CS Pin ist P0.06
-    cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
-};
-
-&pro_micro_spi {
-    // P0.17 (MOSI) und P0.20 (SCK) sind standardmäßig im nice_nano_v2 definiert.
-    // Wir müssen nur sagen, dass hier das nice!view dranhängt.
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    
-    nice_view: nice_view@0 {
-        compatible = "nice,view";
-        spi-max-frequency = <1000000>;
-        reg = <0>;
-    };
-};
+// --- ALLES UNTERHALB HIER LÖSCHEN ---
+// Das nice_view_adapter Shield kümmert sich um den Rest.
+// Du musst nur sicherstellen, dass dein CS-Pin physikalisch an P0.06 (D1) hängt.
