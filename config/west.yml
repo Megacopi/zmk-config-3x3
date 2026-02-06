@@ -2,17 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # support nice_oled and nice_epaper
-    - name: Ziembski
-      url-base: https://github.com/Ziembski
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3.0
       import: app/west.yml
-    # support nice_oled and nice_epaper
-    - name: nice-view-press-start
-      remote: Ziembski
-      revision: main
   self:
     path: config
