@@ -20,4 +20,4 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: kbName nice_oled
+    shield: kbName nice_oled nice_view_press_start
